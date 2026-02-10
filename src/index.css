@@ -1,0 +1,52 @@
+:root {
+  --color-yellow: #F8C661;
+  --color-green: #004643;
+  --color-dark-green: #1F2D2B;
+
+  --background-main: #FFFDF7;
+  --bg-cards: #F3F7F4;
+}
+
+@import "tailwindcss";
+
+body {
+  /* background-color: var(--background-main); */
+}
+
+
+.bg-green {
+  background: var(--color-green);
+}
+
+.green {
+  color: var(--color-dark-green);
+}
+
+.next:disabled {
+  background: #618B89;
+}
+
+:disabled {
+  cursor: default;
+}
+
+.yellow {
+  color: var(--color-yellow);
+}
+
+.green-border {
+  border: 1px solid var(--color-green);
+}
+
+.btn {
+  background-color: var(--bg-cards);
+  background-color: #618b8933;
+}
+
+.right-answer {
+  background: #bbf5bb;
+}
+
+.wrong-answer {
+  background: #ff00338a;
+}
