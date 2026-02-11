@@ -43,38 +43,42 @@ function App() {
 
   return (
     <>
-      <Header />
+      <div className="container min-h-screen m-auto flex flex-col pb-8">
+        <Header />
 
-      {/* если категория не выбрана и игра не завершена */}
-      {!currentQuestion && !isQuizFinished && (
-        <Categories setCurrentCategoryQuestions={setCurrentCategoryQuestions} />
-      )}
-      {/* после клика на категорию подгружаем вопросы */}
-      {currentQuestion && !isQuizFinished && (
-        <>
-          <Questions
-            currentQuestion={currentQuestion}
-            currentQuestionIndex={currentQuestionIndex}
-            currentCategoryQuestions={currentCategoryQuestions}
-            selectedAnswers={selectedAnswers}
-            points={points}
-            setSelectedAnswers={setSelectedAnswers}
-            setScore={setScore}
-            setCurrentQuestionIndex={setCurrentQuestionIndex}
-            finishQuiz={finishQuiz}
-            resetQuiz={resetQuiz}
+        {/* если категория не выбрана и игра не завершена */}
+        {!currentQuestion && !isQuizFinished && (
+          <Categories
+            setCurrentCategoryQuestions={setCurrentCategoryQuestions}
           />
-        </>
-      )}
-      {isQuizFinished && (
-        <Results
-          selectedAnswers={selectedAnswers}
-          questions={currentCategoryQuestions}
-          score={score}
-          onRestart={restartQuiz}
-          toCategories={resetQuiz}
-        />
-      )}
+        )}
+        {/* после клика на категорию подгружаем вопросы */}
+        {currentQuestion && !isQuizFinished && (
+          <>
+            <Questions
+              currentQuestion={currentQuestion}
+              currentQuestionIndex={currentQuestionIndex}
+              currentCategoryQuestions={currentCategoryQuestions}
+              selectedAnswers={selectedAnswers}
+              points={points}
+              setSelectedAnswers={setSelectedAnswers}
+              setScore={setScore}
+              setCurrentQuestionIndex={setCurrentQuestionIndex}
+              finishQuiz={finishQuiz}
+              resetQuiz={resetQuiz}
+            />
+          </>
+        )}
+        {isQuizFinished && (
+          <Results
+            selectedAnswers={selectedAnswers}
+            questions={currentCategoryQuestions}
+            score={score}
+            onRestart={restartQuiz}
+            toCategories={resetQuiz}
+          />
+        )}
+      </div>
     </>
   );
 }

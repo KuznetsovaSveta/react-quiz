@@ -1,5 +1,6 @@
 :root {
   --color-yellow: #F8C661;
+  --color-red: #E15554;
   --color-green: #004643;
   --color-dark-green: #1F2D2B;
 
@@ -32,6 +33,10 @@ body {
 
 .yellow {
   color: var(--color-yellow);
+}
+
+.red{
+  color: var(--color-red);
 }
 
 .green-border {
