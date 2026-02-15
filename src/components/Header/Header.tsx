@@ -5,12 +5,12 @@ const Header = () => {
   return (
     <>
       <header className='mb-8'>
-        <div className="flex justify-between p-4">
-          <div className="w-[40px]"></div>
+        <div className="flex justify-center p-4">
+          {/* <div className="w-[40px]"></div> */}
           <img src={logo} alt="" className="w-52"/>
-          <div className="burger cursor-pointer w-[40px]">
+          {/* <div className="burger cursor-pointer w-[40px]">
             <img src={burger} alt="" />
-          </div>
+          </div> */}
         </div>
       </header>
     </>
