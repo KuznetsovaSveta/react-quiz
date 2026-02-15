@@ -10,6 +10,7 @@ export interface IQuestion {
   id: number;
   categoryId: number;
   question: string;
+  type?: string;
   answers: string[];
   correctAnswerId: number;
 }

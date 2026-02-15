@@ -42,14 +42,14 @@ const Results: React.FC<ResultsProps> = ({
 
   return (
     <>
-      <div className="text-center max-w-lg m-auto p-10 border">
+      <div className="text-center max-w-[95%] m-auto p-8 border rounded-lg">
         <h2 className="text-2xl font-bold green">🎉 Результаты квиза 🎉</h2>
 
         <div className="text-xl">
           <div className="mt-2">
             <span className="">Правильных ответов: </span>
             <span className="">
-              {correctAnswersCount} из {totalQuestions}
+              {correctAnswersCount}&nbsp;из&nbsp;{totalQuestions}
             </span>
           </div>
 
@@ -61,11 +61,11 @@ const Results: React.FC<ResultsProps> = ({
 
         <div className="funny-phrase text-xl mt-2">{getPhrase(percentage)}</div>
 
-<div className="flex gap-6 align-center justify-center mt-4">
-        <button onClick={onRestart} className="bg-green text-white py-2 px-4 text-white rounded-lg cursor-pointer">
+<div className="flex gap-4 align-center justify-center mt-4 flex-wrap">
+        <button onClick={onRestart} className="bg-green text-white py-2 px-4 text-white rounded-lg cursor-pointer max-[520px]:w-full">
           Сыграть еще раз
         </button>
-        <button onClick={toCategories} className="bg-green text-white py-2 px-4 text-white rounded-lg cursor-pointer">
+        <button onClick={toCategories} className="bg-green text-white py-2 px-4 text-white rounded-lg cursor-pointer max-[520px]:w-full">
           Попробовать другие квизы
         </button>
         </div>

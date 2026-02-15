@@ -33,10 +33,10 @@ interface AnswerButtonProps {
     return (
       <button
         onClick={() => !isAnswered && handleAnswerSelect(index)}
-        className={buttonClasses}
+        className={`${buttonClasses} ${currentQuestion.type === 'img' ? 'answer-img' : ''}`}
         disabled={isAnswered}
       >
-        {answer}
+        {currentQuestion.type === 'img' ? <img src={answer} alt="img"/> : answer}
       </button>
     );
   };

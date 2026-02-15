@@ -87,7 +87,7 @@ const Questions = ({
 
   return (
     <>
-      <div className="text-center m-auto max-w-3xl">
+      <div className="text-center m-auto max-w-full w-xl p-2">
         <Timer
           onTimeUp={handleTimeUp}
           isActive={isTimerActive}
@@ -112,7 +112,7 @@ const Questions = ({
         <h2 className="text-2xl font-bold green">{currentQuestion.question}</h2>
 
         {/* Варианты ответов - берем из currentQuestion.answers */}
-        <div className="flex flex-col align-center text-center max-w-lg mx-auto mt-6">
+        <div className={`flex align-center text-center max-w-lg mx-auto mt-6 ${currentQuestion.type === 'img' ? 'answers-img' : 'flex-col'}`}>
           {currentQuestion.answers.map((answer, index) => (
             <AnswerButton
               key={index}
@@ -125,7 +125,7 @@ const Questions = ({
             />
           ))}
           <button
-            className="bg-green text-white py-2 px-4 text-white rounded-lg cursor-pointer disabled:cursor-default next"
+            className="bg-green text-white py-2 px-4 text-white rounded-lg cursor-pointer disabled:cursor-default next w-full"
             disabled={selectedAnswers[currentQuestionIndex] == null}
             onClick={toNextQuestion}
           >

@@ -35,7 +35,7 @@ body {
   color: var(--color-yellow);
 }
 
-.red{
+.red {
   color: var(--color-red);
 }
 
@@ -54,4 +54,18 @@ body {
 
 .wrong-answer {
   background: #ff00338a;
+}
+
+.answers-img{
+  flex-wrap: wrap;
+  column-gap: 16px;
+}
+
+.answer-img {
+  width: calc(50% - 8px);
+}
+
+.answer-img img {
+  height: 100%;
+  object-fit: cover;
 }

@@ -24,7 +24,7 @@ const Categories: React.FC<CategoriesProps> = ({
 
   return (
     <>
-      <div className="text-center m-auto">
+      <div className="text-center m-auto max-w-full w-xl p-2">
         <Title>Прежде чем начать, выберите тему викторины:</Title>
         {loading && <Loader />}
         {error && <Error error={error} />}
