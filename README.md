@@ -1,73 +1,48 @@
-# React + TypeScript + Vite
+# 🧠 QuizzyLand — Интерактивная викторина на React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Многотемная викторина с адаптивным дизайном и удобным интерфейсом. Проект демонстрирует работу с API, хуками и условным рендерингом.
 
-Currently, two official plugins are available:
+🔗 **Демо:** [kuznetsovasveta.github.io/react-quiz](https://kuznetsovasveta.github.io/react-quiz/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ О проекте
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Одностраничное приложение (SPA) для проведения викторин по различным тематикам. Пользователь выбирает тему, отвечает на вопросы с вариантами ответов и получает результат. Проект построен на чистом React без дополнительных библиотек управления состоянием.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠 Технологический стек
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github%20pages&logoColor=white)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **React 18** — функциональные компоненты, хуки (useState, useEffect)
+- **React Router v6** — навигация между экранами выбора темы, вопросов и результатов
+- **CSS Modules** — изолированная стилизация компонентов
+- **Адаптивная верстка** — поддержка мобильных устройств и планшетов
+- **GitHub Pages** — деплой и хостинг
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎯 Реализованный функционал
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### ✅ Основные возможности
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Функция | Описание |
+|---------|----------|
+| 🎮 **Выбор темы** | Экран с карточками 9 различных тематик (Литература, Кино и сериалы, Музыка, Наука, География, Спорт, Технологии, Искусство, Животные и природа) |
+| 📝 **Прохождение викторины** | 10-15 вопросов в каждой теме с 4 вариантами ответов |
+| 🖼️ **Разные типы вопросов** | Кроме вопросов с текстовыми вариантами ответа есть такие, в которых нужно выбрать изображение |
+| ✅ **Индикация правильных ответов** | Визуальное выделение при выборе варианта |
+| ⏱️ **Таймер** | На каждый вопрос дается 20 секунд. Если время вышло, а ответ не дан - подсвечивается правильный вариант ответа и через 5 секунд происходит автоматический переход к следующему вопросу |
+| 📊 **Прогресс-бар** | Отображение текущего вопроса и общего количества |
+| 🏆 **Экран результатов** | Количество правильных ответов и возможность начать заново |
+| 🔄 **Повторное прохождение** | Возможность пройти ту же тему повторно или выбрать другую |
+
+### ✅ Интерактив и UX
+
+- 🎨 **Минималистичный интерфейс** — фокус на контенте
+- 📱 **Адаптивный дизайн** — корректное отображение на всех устройствах
+- ⚡ **Мгновенная обратная связь** — подсветка правильного/неправильного ответа
