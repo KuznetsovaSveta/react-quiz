@@ -2,6 +2,7 @@
   "name": "react-quiz",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://kuznetsovasveta.github.io/react-quiz/",
   "type": "module",
   "scripts": {
     "dev": "vite",
