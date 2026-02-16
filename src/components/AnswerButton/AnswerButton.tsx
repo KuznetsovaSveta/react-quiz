@@ -1,4 +1,5 @@
 import type { IQuestion } from "../../hooks/useData";
+import { hashIndex } from '../../utils/hash';
 
 interface AnswerButtonProps {
     index: number;
@@ -18,8 +19,8 @@ interface AnswerButtonProps {
     handleAnswerSelect,
   }) => {
     const isSelected = selectedAnswers[currentQuestionIndex] === index;
-    const isCorrect = index === currentQuestion.correctAnswerId;
     const isAnswered = selectedAnswers[currentQuestionIndex] !== undefined;
+    const isCorrect = hashIndex(index) === currentQuestion.correctAnswerHash;
 
     const buttonClasses = `
     cursor-pointer mb-4 p-2 rounded-lg answ answer-button transition-all duration-300 btn

@@ -3,6 +3,7 @@ import type { IQuestion } from "../../hooks/useData";
 import AnswerButton from "../AnswerButton/AnswerButton";
 import Timer from "../Timer/Timer";
 import ProgressBar from "../PropgressBar/ProgressBar";
+import { hashIndex } from "../../utils/hash";
 import closeIcon from "./img/close.svg";
 
 interface QuestionsProps {
@@ -44,8 +45,11 @@ const Questions = ({
     newSelectedAnswers[currentQuestionIndex] = answerIndex;
     setSelectedAnswers(newSelectedAnswers);
 
+    // работа с хешами
+    const selectedHash = hashIndex(answerIndex);
+
     // проверяем правильность данного ответа
-    const isCorrect = answerIndex === currentQuestion.correctAnswerId;
+    const isCorrect = selectedHash === currentQuestion.correctAnswerHash;
 
     // если правильно - добавляем баллы
     if (isCorrect) {
@@ -82,7 +86,7 @@ const Questions = ({
 
     setTimeout(() => {
       toNextQuestion();
-    }, 3000);
+    }, 5000);
   };
 
   return (
@@ -92,7 +96,7 @@ const Questions = ({
           onTimeUp={handleTimeUp}
           isActive={isTimerActive}
           resetTrigger={timerResetTrigger}
-          initialTime={10}
+          initialTime={20}
           key={currentQuestionIndex}
         />
         <div className="guestion__top flex max-w-lg m-auto mb-4 gap-4">
@@ -112,7 +116,9 @@ const Questions = ({
         <h2 className="text-2xl font-bold green">{currentQuestion.question}</h2>
 
         {/* Варианты ответов - берем из currentQuestion.answers */}
-        <div className={`flex align-center text-center max-w-lg mx-auto mt-6 ${currentQuestion.type === 'img' ? 'answers-img' : 'flex-col'}`}>
+        <div
+          className={`flex align-center text-center max-w-lg mx-auto mt-6 ${currentQuestion.type === "img" ? "answers-img" : "flex-col"}`}
+        >
           {currentQuestion.answers.map((answer, index) => (
             <AnswerButton
               key={index}

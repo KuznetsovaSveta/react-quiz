@@ -12,7 +12,7 @@ export interface IQuestion {
   question: string;
   type?: string;
   answers: string[];
-  correctAnswerId: number;
+  correctAnswerHash: string;
 }
 
 export const useData = () => {

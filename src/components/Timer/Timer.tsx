@@ -65,8 +65,8 @@ const Timer = ({
 
   // Определяем цвет в зависимости от оставшегося времени
   const getColor = () => {
-    if (timeLeft > 20) return "#004643"; // зеленый
-    if (timeLeft > 10) return "#F8C661"; // оранжевый
+    if (timeLeft > 10) return "#004643"; // зеленый
+    if (timeLeft > 5) return "#F8C661"; // оранжевый
     return "#E15554"; // красный
   };
   return (
@@ -103,7 +103,7 @@ const Timer = ({
       <div className="absolute flex flex-col items-center justify-center">
         <span
           className={`text-4xl font-bold transition-colors duration-300 ${
-            timeLeft <= 10 ? "red" : timeLeft <= 20 ? "yellow" : "green"
+            timeLeft <= 5 ? "red" : timeLeft <= 10 ? "yellow" : "green"
           }`}
         >
           {timeLeft}

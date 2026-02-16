@@ -14,9 +14,7 @@ function App() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>([]);
   const [score, setScore] = useState(0);
-  // const [isQuizActive, setIsQuizActive] = useState(false);
   const [isQuizFinished, setIsQuizFinished] = useState(false);
-  // const [timer, setTimer] = useState(600); // 10 минут в секундах
   const points = 10;
 
   // Получаем текущий вопрос
