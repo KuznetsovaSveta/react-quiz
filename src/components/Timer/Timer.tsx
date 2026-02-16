@@ -14,7 +14,7 @@ const Timer = ({
   resetTrigger,
 }: TimerProps) => {
   const [timeLeft, setTimeLeft] = useState(initialTime);
-  const timerRef = useRef<NodeJS.Timeout>();
+  const timerRef = useRef<number | undefined>(null);
   const timeUpCalledRef = useRef(false); // Флаг для защиты
   const isMountedRef = useRef(true); // Флаг монтирования
 
@@ -37,9 +37,11 @@ const Timer = ({
         if (!isMountedRef.current) return prev;
 
         if (prev <= 1) {
-          clearInterval(timerRef.current);
+          if (timerRef.current) {
+            clearInterval(timerRef.current);
+          }
 
-          // ✅ Вызываем ТОЛЬКО ОДИН РАЗ
+          // Вызываем ТОЛЬКО ОДИН РАЗ
           if (!timeUpCalledRef.current) {
             timeUpCalledRef.current = true;
             onTimeUp();
