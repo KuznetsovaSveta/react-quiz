@@ -18,7 +18,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github%20pages&logoColor=white)
 
-- **React 18** — функциональные компоненты, хуки (useState, useEffect)
+- **React 19** — функциональные компоненты, хуки (useState, useEffect)
 - **React Router v6** — навигация между экранами выбора темы, вопросов и результатов
 - **CSS Modules** — изолированная стилизация компонентов
 - **Адаптивная верстка** — поддержка мобильных устройств и планшетов
